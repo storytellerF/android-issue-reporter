@@ -32,6 +32,17 @@ import java.util.Map;
 public class ExtraInfo {
     private final Map<String, String> extraInfo = new LinkedHashMap<>();
 
+    public static ExtraInfo fromBundle(Bundle bundle) {
+        ExtraInfo extraInfo = new ExtraInfo();
+        if (bundle == null || bundle.isEmpty()) {
+            return extraInfo;
+        }
+        for (String key : bundle.keySet()) {
+            extraInfo.put(key, bundle.getString(key));
+        }
+        return extraInfo;
+    }
+
     public void put(String key, String value) {
         extraInfo.put(key, value);
     }
@@ -97,16 +108,5 @@ public class ExtraInfo {
             bundle.putString(key, extraInfo.get(key));
         }
         return bundle;
-    }
-
-    public static ExtraInfo fromBundle(Bundle bundle) {
-        ExtraInfo extraInfo = new ExtraInfo();
-        if (bundle == null || bundle.isEmpty()) {
-            return extraInfo;
-        }
-        for (String key : bundle.keySet()) {
-            extraInfo.put(key, bundle.getString(key));
-        }
-        return extraInfo;
     }
 }

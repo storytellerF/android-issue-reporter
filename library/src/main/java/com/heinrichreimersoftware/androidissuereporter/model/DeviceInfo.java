@@ -30,9 +30,9 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
-import java.util.Arrays;
-
 import androidx.annotation.IntRange;
+
+import java.util.Arrays;
 
 public class DeviceInfo {
     private final int versionCode;

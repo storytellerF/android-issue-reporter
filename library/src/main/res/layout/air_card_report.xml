@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/air_title_issue"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textColor="?android:textColorSecondary"/>
+            android:textColor="?android:textColorSecondary" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -48,11 +48,11 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/air_inputTitle"
-                android:maxLines="1"
-                android:inputType="textCapSentences"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/air_label_issue_title"/>
+                android:hint="@string/air_label_issue_title"
+                android:inputType="textCapSentences"
+                android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -65,35 +65,35 @@
                 android:id="@+id/air_inputDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:hint="@string/air_label_issue_description"
                 android:inputType="textMultiLine|textCapSentences"
                 android:lines="2"
-                android:scrollbars="vertical"
-                android:hint="@string/air_label_issue_description"/>
+                android:scrollbars="vertical" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:layout_marginTop="@dimen/air_baseline">
+            android:layout_marginTop="@dimen/air_baseline"
+            android:gravity="center_vertical">
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/air_label_device_info"
-                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
             <ImageButton
                 android:id="@+id/air_buttonDeviceInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/air_icon_padding"
                 android:background="?selectableItemBackgroundBorderless"
-                app:srcCompat="@drawable/air_ic_expand_more"
+                android:contentDescription="@string/air_label_device_info"
+                android:padding="@dimen/air_icon_padding"
                 android:tint="?android:textColorPrimary"
-                android:contentDescription="@string/air_label_device_info"/>
+                app:srcCompat="@drawable/air_ic_expand_more" />
 
         </LinearLayout>
 
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/air_baseline_half"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textColor="?android:textColorSecondary"/>
+                android:textColor="?android:textColorSecondary" />
 
         </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
 

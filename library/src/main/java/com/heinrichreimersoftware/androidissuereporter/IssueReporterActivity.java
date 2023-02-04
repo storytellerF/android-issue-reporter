@@ -24,6 +24,8 @@
 
 package com.heinrichreimersoftware.androidissuereporter;
 
+import static android.util.Patterns.EMAIL_ADDRESS;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -41,6 +43,15 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.StringDef;
+import androidx.annotation.StringRes;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.NavUtils;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -66,27 +77,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.StringDef;
-import androidx.annotation.StringRes;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.NavUtils;
-
-import static android.util.Patterns.EMAIL_ADDRESS;
-
 public abstract class IssueReporterActivity extends AppCompatActivity {
     private static final String TAG = IssueReporterActivity.class.getSimpleName();
 
     private static final int STATUS_BAD_CREDENTIALS = 401;
     private static final int STATUS_ISSUES_NOT_ENABLED = 410;
-    @StringDef({RESULT_OK, RESULT_BAD_CREDENTIALS, RESULT_INVALID_TOKEN, RESULT_ISSUES_NOT_ENABLED,
-            RESULT_UNKNOWN})
-    @Retention(RetentionPolicy.SOURCE)
-    private @interface Result {
-    }
     private static final String RESULT_OK = "RESULT_OK";
     private static final String RESULT_BAD_CREDENTIALS = "RESULT_BAD_CREDENTIALS";
     private static final String RESULT_INVALID_TOKEN = "RESULT_INVALID_TOKEN";
@@ -108,9 +103,7 @@ public abstract class IssueReporterActivity extends AppCompatActivity {
     private RadioButton optionAnonymous;
     private ExpandableRelativeLayout layoutLogin;
     private FloatingActionButton buttonSend;
-
     private Drawable optionUseAccountButtonDrawable = null;
-
     private String token;
 
     @Override
@@ -398,6 +391,12 @@ public abstract class IssueReporterActivity extends AppCompatActivity {
         updateGuestTokenViews();
     }
 
+    @StringDef({RESULT_OK, RESULT_BAD_CREDENTIALS, RESULT_INVALID_TOKEN, RESULT_ISSUES_NOT_ENABLED,
+            RESULT_UNKNOWN})
+    @Retention(RetentionPolicy.SOURCE)
+    private @interface Result {
+    }
+
     private static class ReportIssueTask extends DialogAsyncTask<Void, Void, String> {
         private final Report report;
         private final GithubTarget target;
@@ -412,7 +411,7 @@ public abstract class IssueReporterActivity extends AppCompatActivity {
         }
 
         private static void report(Activity activity, Report report, GithubTarget target,
-                                  GithubLogin login) {
+                                   GithubLogin login) {
             new ReportIssueTask(activity, report, target, login).execute();
         }
 

@@ -29,8 +29,9 @@
 
     <application>
 
-        <activity android:name=".IssueReporterLauncher$Activity"
-            android:theme="@style/Theme.IssueReporter"/>
+        <activity
+            android:name=".IssueReporterLauncher$Activity"
+            android:theme="@style/Theme.IssueReporter" />
 
     </application>
 

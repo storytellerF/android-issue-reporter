@@ -24,22 +24,6 @@
 
 package com.heinrichreimersoftware.androidissuereporter;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-
-import com.heinrichreimersoftware.androidissuereporter.model.github.ExtraInfo;
-import com.heinrichreimersoftware.androidissuereporter.model.github.GithubTarget;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.StyleRes;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.widget.Toolbar;
-
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_EXTRA_INFO;
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_GUEST_EMAIL_REQUIRED;
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_GUEST_TOKEN;
@@ -48,6 +32,22 @@ import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLaunc
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_TARGET_REPOSITORY;
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_TARGET_USERNAME;
 import static com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher.Activity.EXTRA_THEME;
+
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.StyleRes;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.Toolbar;
+
+import com.heinrichreimersoftware.androidissuereporter.model.github.ExtraInfo;
+import com.heinrichreimersoftware.androidissuereporter.model.github.GithubTarget;
 
 public class IssueReporterLauncher {
     private static final String TAG = IssueReporterLauncher.class.getSimpleName();
@@ -233,7 +233,7 @@ public class IssueReporterLauncher {
         @Override
         protected void onSaveExtraInfo(ExtraInfo extraInfo) {
             super.onSaveExtraInfo(extraInfo);
-            if (this.extraInfo != null && !this.extraInfo.isEmpty())  {
+            if (this.extraInfo != null && !this.extraInfo.isEmpty()) {
                 extraInfo.putAll(this.extraInfo);
             }
         }

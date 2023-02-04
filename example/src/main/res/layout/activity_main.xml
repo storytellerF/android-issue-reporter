@@ -37,7 +37,7 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"/>
+            android:layout_height="?actionBarSize" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/description_android_issue_reporter"
-            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"/>
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
 
         <CheckBox
             android:id="@+id/optionGuestToken"
@@ -60,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/baseline"
             android:checked="true"
-            android:text="@string/label_option_guest_token"/>
+            android:text="@string/label_option_guest_token" />
 
         <Button
             android:id="@+id/buttonOpenReporter"
@@ -68,20 +68,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/baseline"
             android:text="@string/label_open_reporter"
-            android:textColor="?android:textColorPrimaryInverse"/>
+            android:textColor="?android:textColorPrimaryInverse" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/baseline"
             android:text="@string/title_token_not_working"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/description_token_not_working"
-            android:textStyle="italic"/>
+            android:textStyle="italic" />
 
     </LinearLayout>
 

@@ -30,10 +30,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 
-import com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.heinrichreimersoftware.androidissuereporter.IssueReporterLauncher;
 
 public class MainActivity extends AppCompatActivity {
 

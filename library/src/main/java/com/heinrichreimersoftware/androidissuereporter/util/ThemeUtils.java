@@ -28,12 +28,12 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.TypedValue;
 
-import com.heinrichreimersoftware.androidissuereporter.R;
-
 import androidx.annotation.AttrRes;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.StyleableRes;
+
+import com.heinrichreimersoftware.androidissuereporter.R;
 
 public class ThemeUtils {
     @ColorInt
