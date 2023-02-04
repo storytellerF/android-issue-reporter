@@ -34,5 +34,5 @@ dependencies {
 
     implementation 'org.eclipse.mylyn.github:org.eclipse.egit.github.core:2.1.5'
     implementation 'com.github.storytellerF.material-dialogs:core:3255b41c0d'
-    implementation 'com.github.aakira:expandable-layout:1.6.0@aar'
+    implementation('com.github.hees-k:ExpandableLayout:1.6.1')
 }
